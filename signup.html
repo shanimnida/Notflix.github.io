@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notflix Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="signup-box">
+        <form class="signup-form" action="placeholder.html" oninput="return verifyPassword()">
+            <h1>Sign Up</h1>
+            <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
+            <input type="tel" name="mob_number" id="mob_number" placeholder="Mobile Number (09** *** ****)" required pattern="^09\d{9}$" maxlength="11">
+            <input type="text" name="email" id="username" placeholder="Email" required oninput="validateEmail(event)">
+            <h3 id="email_message" class="error-message" style="color: red; display: none;"></h3>
+            <div class="password-container">
+                <input type="password" name="password" id="pass1" placeholder="Password" required oninput="checkPasswordStrength(); verifyPassword();">
+                <span class="toggle-password" onclick="togglePassword('pass1')">👁</span>
+            </div>
+            <div id="password_strength" style="font-weight: bold; margin-top: 5px;"></div>
+            <div class="password-container">
+                <input type="password" name="confirm_password" id="pass2" placeholder="Confirm Password" required oninput="verifyPassword();">
+                <span class="toggle-password" onclick="togglePassword('pass2')">👁</span>
+            </div>
+            <h3 id="verify_message" class="error-message" style="display:none;"></h3>
+            <button type="submit" class="signup-button">Sign Up</button>
+            <div class="login-link">
+                <span>Already have an account? <a href="index.html">Sign in now</a>.</span>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
